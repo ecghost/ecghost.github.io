@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="数据库的数据模型按照上次提到的数据模型的概念，就是将现实生活中具体事务的关系转换成数据库里面数据之间的关系。这次就是详细介绍几种数据模型和画法">
+  <meta name="description" content="数据库的完整性数据库的完整性就是数据的正确性、有效性和相容性，防止数据库中有不正确的数据。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库-数据模型">
-<meta property="og:url" content="http://example.com/2023/05/27/%E6%95%B0%E6%8D%AE%E5%BA%93_2/index.html">
+<meta property="og:title" content="数据库-完整性">
+<meta property="og:url" content="http://example.com/2023/06/01/%E6%95%B0%E6%8D%AE%E5%BA%93_8/index.html">
 <meta property="og:site_name" content="碘化钇的鸡窝">
-<meta property="og:description" content="数据库的数据模型按照上次提到的数据模型的概念，就是将现实生活中具体事务的关系转换成数据库里面数据之间的关系。这次就是详细介绍几种数据模型和画法">
+<meta property="og:description" content="数据库的完整性数据库的完整性就是数据的正确性、有效性和相容性，防止数据库中有不正确的数据。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-05-27T05:05:01.277Z">
-<meta property="article:modified_time" content="2023-05-27T08:21:11.537Z">
+<meta property="article:published_time" content="2023-06-01T08:01:41.081Z">
+<meta property="article:modified_time" content="2023-06-01T09:29:37.659Z">
 <meta property="article:author" content="碘化钇">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2023/05/27/%E6%95%B0%E6%8D%AE%E5%BA%93_2/">
+<link rel="canonical" href="http://example.com/2023/06/01/%E6%95%B0%E6%8D%AE%E5%BA%93_8/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>数据库-数据模型 | 碘化钇的鸡窝</title>
+  <title>数据库-完整性 | 碘化钇的鸡窝</title>
   
 
 
@@ -155,7 +155,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/27/%E6%95%B0%E6%8D%AE%E5%BA%93_2/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/01/%E6%95%B0%E6%8D%AE%E5%BA%93_8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -168,7 +168,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          数据库-数据模型
+          数据库-完整性
         </h1>
 
         <div class="post-meta">
@@ -179,7 +179,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-05-27 13:05:01 / 修改时间：16:21:11" itemprop="dateCreated datePublished" datetime="2023-05-27T13:05:01+08:00">2023-05-27</time>
+              <time title="创建时间：2023-06-01 16:01:41 / 修改时间：17:29:37" itemprop="dateCreated datePublished" datetime="2023-06-01T16:01:41+08:00">2023-06-01</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -202,62 +202,55 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="数据库的数据模型"><a href="#数据库的数据模型" class="headerlink" title="数据库的数据模型"></a>数据库的数据模型</h1><p>按照上次提到的数据模型的概念，就是将现实生活中具体事务的关系转换成数据库里面数据之间的关系。<br>这次就是详细介绍几种数据模型和画法  </p>
+        <h1 id="数据库的完整性"><a href="#数据库的完整性" class="headerlink" title="数据库的完整性"></a>数据库的完整性</h1><p>数据库的完整性就是数据的正确性、有效性和相容性，防止数据库中有不正确的数据。</p>
 <span id="more"></span>
 
-<h2 id="数据模型的分类"><a href="#数据模型的分类" class="headerlink" title="数据模型的分类"></a>数据模型的分类</h2><p>模型主要是分为两类，一个是概念模型，一个是数据模型  </p>
+<h2 id="数据库的完整性概述"><a href="#数据库的完整性概述" class="headerlink" title="数据库的完整性概述"></a>数据库的完整性概述</h2><p>数据库的完整性是一种语义概念，防止数据库中存在不符合语义的字符和不正确的数据，保证数据的质量。<br>为了维护数据库的完整性，DBMS必须提供完整性约束条件的机制，提供完整性检查的办法，违法处理。</p>
+<p>对于完整性约束条件：    </p>
 <ol>
-<li>概念模型：<br>概念模型是按照用户的观点对数据和信息进行建模，主要是在数据库设计阶段使用。</li>
-<li>数据模型：<br>(1) 逻辑数据模型包括网状、层次、关系、面向对象、对象关系模型等等。<br>(2) 物理数据模型是数据最底层的抽象，描述数据在系统里面的表达方式和存储方式。<br>逻辑数据模型是用于DBMS的实现，而物理数据模型更多的是实现DBMS的任务。</li>
+<li>列级约束，主要是对属性的数据类型、数据格式和取值范围、精度等的约束。例如年龄为整数。     </li>
+<li>元组约束：一个元组是由若干个属性组成的，元组级约束就是元组中各个属性之间的约束关系。例如发货日期不能大于收货日期。</li>
+<li>关系约束：关系约束是指一个关系的各个元组之间、或者多个关系之间存在的各种联系或约束。例如实体完整性约束。</li>
 </ol>
-<h2 id="E-R概念模型"><a href="#E-R概念模型" class="headerlink" title="E-R概念模型"></a>E-R概念模型</h2><p>用于描述，主要是数据库建库的时候和用户互动的图。主要是理解一些定义。</p>
+<h2 id="实体完整性约束"><a href="#实体完整性约束" class="headerlink" title="实体完整性约束"></a>实体完整性约束</h2><p>主键的值不能为空也不能重复<br>实现方法：通过对主键值的约束实现实体完整性<br>定义表的主键后，每当对该表插入一条记录或者<br>对主键进行更新操作时，DBMS自动进行实体完整性的检查，如果不满足主键的要求，则拒绝执行。</p>
+<h2 id="参照完整性约束"><a href="#参照完整性约束" class="headerlink" title="参照完整性约束"></a>参照完整性约束</h2><p>外键的约束<br>对主表进行增删改的时候有些约束：    </p>
 <ol>
-<li><p>实体<br>客观存在并且相互区别的事情就是实体，可以是具体的东西，也可以是抽象的概念。</p>
-</li>
-<li><p>属性<br>实体所具有的某一个特征，比如学生的年龄这种。<br>属性分为类型和值两个东西，类型就是年龄这种，值就是具体的属性，比如19岁。</p>
-</li>
-<li><p>联系<br>事务内部和事务的联系<br>在这里就是实体内部的联系和实体之间的联系<br>联系分为三种，1:1,1:n,m:n，<br>三个实体两两之间的多对多联系一般是拿m:n:p，</p>
-</li>
+<li>插入：按照主键标准插入数据。 </li>
+<li>修改：修改的话会影响从表，有两个策略：<br>（1）改变对应从表的所有外键值，使之与主键一致<br>（2）不允许修改主表中的主键值</li>
+<li>删除：同修改，也有两个策略：<br>（1）一是不允许删除主表的主键值<br>（2）级联删除从表中相应外键值所在的行</li>
 </ol>
-<p>画图的时候也要注意  </p>
+<p>对从表的操作也有约束：  </p>
 <ol>
-<li>实体用矩形 </li>
-<li>属性用椭圆形</li>
-<li>联系用菱形，然后联系和实体连接的线上面用1或者m或者n这种来表示三种或更多种的联系</li>
+<li>插入：参照主表的主键值，不能插入主键没有的值。   </li>
+<li>修改：修改的外键参照主表的值</li>
+<li>删除：没啥约束</li>
 </ol>
-<h2 id="层次模型"><a href="#层次模型" class="headerlink" title="层次模型"></a>层次模型</h2><p>层次模型就是用树型结构来表示各个实体之间的联系，    </p>
+<h2 id="用户完整性约束"><a href="#用户完整性约束" class="headerlink" title="用户完整性约束"></a>用户完整性约束</h2><p>针对某一具体应用的数据必须满足的语义要求<br>用CHECK CONSTRAINT这种东西加约束</p>
+<h2 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h2><p>数据库系统一般提供两种主要机制来实现业务规则和数据完整性，一种是约束，另一种是触发器</p>
+<p>触发器是一种特殊类型的存储过程，在对表或视图发出 UPDATE、INSERT 或 DELETE 语句时自动执行</p>
+<p>可以用触发器实现更多数据库的完整性保护，实现更复杂的过程。</p>
+<p>触发器的构建：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CREATE TRIGGER A</span><br><span class="line">    BEFORE B ON Table</span><br><span class="line">    FOR EACH ROW</span><br><span class="line">    WHEN...</span><br></pre></td></tr></table></figure>
+<p>A为触发器的名称，B为类似INSERT这些对数据库的操作。</p>
+<p>对于BEFORE和AFTER：  </p>
 <ol>
-<li>优点：<br>（1）数据结构比较简单清晰<br>（2）查询快<br>（3）提供了良好的数据完整性的支持</li>
-<li>缺点：<br>（1）不能直接表示实体之间的复杂联系，只能通过加入冗余数据或者加入虚拟节点，容易使数据产生不一致性<br>（2）数据插入和删除不方便<br>（3）查询子女节点必须通过双亲，不能一步到位<br>（4）结构严密，层次命令趋于程序化，不灵活</li>
+<li><p>BEFORE：先判断是否满足触发条件，如果满足的话则执行触发动作的操作，然后执行触发事件的操作</p>
+</li>
+<li><p>AFTER：前面同BEFORE，如果触发事件因错误 (如违反约束或语法错误) 而失败，触发器将不会执行</p>
+</li>
 </ol>
-<h2 id="网状模型"><a href="#网状模型" class="headerlink" title="网状模型"></a>网状模型</h2><p>网状结构简单来说就是不用严格按照树的结构来构造层次模型，和层次模型差不多，但是不是树。</p>
+<p>触发器也会分为两种：    </p>
 <ol>
-<li>优点：<br>（1）可以直观描述现实世界<br>（2）性能好，存取效率高<br>（3）网状模型能够间接表达多对多的联系，比如将多对多联系分解成多个一对多联系</li>
-<li>缺点：<br>（1）结构比较复杂，数据越多越复杂<br>（2）编程语言复杂，不好写</li>
+<li>行级触发器： FOR EACH ROW<br>对每一个修改的元组都会触发触发器的检查和执行   </li>
+<li>语句触发器： FOR EACH STATEMENT<br>只在SQL语句执行时候进行触发条件的检查和触发器的执行</li>
 </ol>
-<h2 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h2><p>关系模型可以说是专门为数据库设计的一种模型</p>
-<p>在关系模型里面基本数据结构为二维表，一张表就是一个关系，下面是一些基本的概念</p>
-<ol>
-<li><p>基本概念<br>（1）关系：<br>关系是一张二维表，由很多行和列组成，一个关系可以用来表述一个实体集。<br>（2）属性：一个表（关系）里面一个列就是一个属性。<br>（3）域：<br>域是属性的取值范围，比如学生姓名是汉字的集合这种<br>（4）元组：<br>关系是元组的集合，元组可以理解为表的行<br>（5）键：<br>键是由一个属性或者多个属性组成，能够唯一表示一个元组，<br>选择其中一个作为主键，另外的是候选键</p>
-</li>
-<li><p>关系模式：对关系的描述叫做关系模式<br>关系名(属性1，属性2，属性3…..)，比如：<br>学生(年龄，专业，学号)<br>关系数据库模式是一组关系模式的集合，这组模式对应的关系的集合就是关系数据库。<br>理解上面那句话就是所有的表形成关系数据库，这些表的描述就是关系数据模式。<br>关系模型中的基本数据结构是单一的关系，就是基本数据结构就是一张表，<br>现实世界中实体和实体的联系都是用关系表示</p>
-</li>
-<li><p>关系必须是规范化的，就是满足一定的规范，最基本的规范就是关系的每一个分量必须是一个不可分的数据项，也就是一般看到的表中如果工资这种东西还往下分变成了基本，奖金这种就不行，工资就是工资，只能有一个列</p>
-</li>
-<li><p>数据完整性约束<br>目的是维护数据库中的数据和现实保持一致，需要对数据施加一定的约束条件：实体完整性、参照完整性、用户定义完整性</p>
-</li>
-<li><p>关系模型的数据操纵：增删改查<br>所有的数据操纵可以归结于对关系的运算，然后关系运算有下面几种：</p>
-</li>
-</ol>
-<ul>
-<li>对关系可以进行多种运算</li>
-<li>运算结果是一个新的关系</li>
-<li>关系运算分为关系代数和关系演算</li>
-</ul>
-<ol start="6">
-<li>关系模型的优点<br>（1）数据结构简单<br>（2）一体化的数据子语言<br>（3）数据独立性高<br>（4）面向集合的存取方式<br>（5）坚实的理论基础<br>（6）有利于开展其他应用</li>
-</ol>
-
+<p>对整个列进行修改的时候，如果是ROW，则列有多少行就执行多少次，如果是STATEMENT，则只会执行一次</p>
+<p>下面是一个定义的完整的代码：    </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TRIGGER Insert_or_Update</span><br><span class="line">    BEFORE INSERT OR UPDATE ON Teacher</span><br><span class="line">    FOR EACH ROW</span><br><span class="line">    AS BEGIN</span><br><span class="line">        IF(new.Job = &#x27;教授&#x27;) AND (new.Sal &lt; 4000)</span><br><span class="line">        THEN new.Sal = 4000;</span><br><span class="line">        ENDIF;</span><br><span class="line">    END;</span><br></pre></td></tr></table></figure>
+<p>创造了一个触发器，在每行执行INSERT或者UPDATE之前触发器触发，检查教授的工资是不是小于4000，如果小于4000则修改到4000</p>
+<p>一个表上面可能会有多个触发器，多个触发器同时触发的时候有一定顺序的要求：先BEFORE再SQL再AFTER</p>
+<p>删除触发器：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP TRIGGER Insert_or_Update;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -272,13 +265,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93_1/" rel="prev" title="数据库-总体结构">
-      <i class="fa fa-chevron-left"></i> 数据库-总体结构
+    <a href="/2023/05/31/%E6%95%B0%E6%8D%AE%E5%BA%93_7/" rel="prev" title="数据库-安全性">
+      <i class="fa fa-chevron-left"></i> 数据库-安全性
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/05/28/%E6%95%B0%E6%8D%AE%E5%BA%93_3/" rel="next" title="数据库-关系数据库">
-      数据库-关系数据库 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -337,7 +327,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">数据库的数据模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">1.1.</span> <span class="nav-text">数据模型的分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E-R%E6%A6%82%E5%BF%B5%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.2.</span> <span class="nav-text">E-R概念模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%82%E6%AC%A1%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.3.</span> <span class="nav-text">层次模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%8A%B6%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.4.</span> <span class="nav-text">网状模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.5.</span> <span class="nav-text">关系模型</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="nav-number">1.</span> <span class="nav-text">数据库的完整性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">数据库的完整性概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E4%BD%93%E5%AE%8C%E6%95%B4%E6%80%A7%E7%BA%A6%E6%9D%9F"><span class="nav-number">1.2.</span> <span class="nav-text">实体完整性约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E7%85%A7%E5%AE%8C%E6%95%B4%E6%80%A7%E7%BA%A6%E6%9D%9F"><span class="nav-number">1.3.</span> <span class="nav-text">参照完整性约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E5%AE%8C%E6%95%B4%E6%80%A7%E7%BA%A6%E6%9D%9F"><span class="nav-number">1.4.</span> <span class="nav-text">用户完整性约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="nav-number">1.5.</span> <span class="nav-text">触发器</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
